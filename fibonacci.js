@@ -14,4 +14,23 @@ function fibs(num) {
   }
 }
 
-module.exports = { fibs };
+function fibsRec(num,) {
+  //console.log("This was printed recursively");
+  if(num === 0){
+    return [];
+  }
+  if(num === 1){
+    return [0];
+  }
+  if(num === 2) {
+    return [0, 1];
+  }
+  if(num > 2){
+    const tmp1 = fibsRec(num - 1);
+    tmp1.push( tmp1[tmp1.length - 1] + tmp1[tmp1.length - 2]);
+    return tmp1;
+  }
+}
+
+
+module.exports = { fibs, fibsRec };
